@@ -15,10 +15,13 @@ public class CreatePage extends Page{
 	public WebElement text;
 	
 	public WebElement title;
+	
+	Params params;
 		
-	static Params params=Params.getInstance();
-	CreatePage(WebDriver driver){
+	
+	CreatePage(WebDriver driver, Params par){
 		this.driver=driver;
+		this.params=par;
 		save = driver.findElement(params.saveButton);
 		send = driver.findElement(params.sendButton);
 		addr = driver.findElement(params.toForm);
@@ -33,13 +36,13 @@ public class CreatePage extends Page{
 		addr.sendKeys(to);
 		text.sendKeys(body); 
 		save.click();
-		return new MainPage(driver);
+		return new MainPage(driver,params);
 	}
 	
 	public MainPage sendLetter(){
 		send.click();
 		
-		return new MainPage(driver);
+		return new MainPage(driver,params);
 	}
 
 }

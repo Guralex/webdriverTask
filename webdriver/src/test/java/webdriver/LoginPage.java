@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends Page {
-	static Params params=Params.getInstance();
+	
 	
 	public WebElement loginForm ;
 	
@@ -15,13 +15,14 @@ public class LoginPage extends Page {
 	
 	
 	public WebElement button;
+	Params params;
 	
-	
-	LoginPage(WebDriver driver){
+	LoginPage(WebDriver driver, Params params){
 		this.driver=driver;
 		this.loginForm=driver.findElement(params.loginForm);
 		this.passForm=driver.findElement(params.passForm);
 		this.button=driver.findElement(params.loginButton);
+		this.params=params;
 		
 	}
 
@@ -32,6 +33,6 @@ public class LoginPage extends Page {
 		loginForm.sendKeys(login);
 		passForm.sendKeys(password);
 		button.click();
-		return new MainPage(driver);
+		return new MainPage(driver, params);
 	}
 }

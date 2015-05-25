@@ -5,17 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MainPage extends Page {
-	static Params params=Params.getInstance();
+	
 	
 	public WebElement create;
 		
 	public WebElement chern;
 		
 	public WebElement sent;
+	Params params;
 	
-	MainPage(WebDriver driver){
+	MainPage(WebDriver driver,Params params){
 		this.driver=driver;
-
+		this.params=params;
 		create = driver.findElement(params.createMessage);
 		
 
@@ -27,7 +28,7 @@ public class MainPage extends Page {
 		
 		
 		create.click();
-		return new CreatePage(driver);
+		return new CreatePage(driver, params);
 		
 	}
 	
@@ -36,7 +37,7 @@ public class MainPage extends Page {
 		chern = driver.findElement(params.chernovik);
 		chern.click();
 		
-		return new ChernPage(driver);
+		return new ChernPage(driver, params);
 	}
 	
 	public SentPage goToSent(){
@@ -44,7 +45,7 @@ public class MainPage extends Page {
 		chern = driver.findElement(params.chernovik);
 		chern.click();
 		
-		return new SentPage(driver);
+		return new SentPage(driver,params);
 	}
 	
 }

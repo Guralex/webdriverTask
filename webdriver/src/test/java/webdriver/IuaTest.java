@@ -12,8 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class IuaTest {
+	
 	static WebDriver driver;
-	static Params params=Params.getInstance();
+	static Params params=Params.getInstance("i.ua");
 	
 	public LoginPage loginpage;
 	public MainPage main;
@@ -44,7 +45,7 @@ public class IuaTest {
 		
 		driver.get("http://mail.i.ua/");
 				
-		loginpage = new LoginPage(driver);
+		loginpage = new LoginPage(driver,params);
 		main = loginpage.login("sanya_gura", "serenity");
 		create = main.goToCreate();
 		assertTrue(driver.getTitle().contains("Новое"));
@@ -61,8 +62,8 @@ public class IuaTest {
 		assertTrue(chern.firstMail==null);
 		sent = chern.goToSent();
 		assertTrue(sent.firstSent.getText().contains(testAddr));
-		sent.gotoExit();
-		assertTrue(driver.getTitle().contains("Твоя почта"));
+		/*sent.gotoExit();
+		assertTrue(driver.getTitle().contains("Твоя почта"));*/
 		
 	}
 	

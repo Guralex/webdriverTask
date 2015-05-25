@@ -4,15 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ChernPage {
-	static Params params=Params.getInstance();
+	Params params;
 	private WebDriver driver;
 	
 	WebElement firstMail;
 	WebElement sentLink;
 
-	ChernPage(WebDriver driver){
+	ChernPage(WebDriver driver, Params par){
 		this.driver=driver;
-	
+		this.params=par;
 		if(driver.findElements(params.firstMail).size()!=0)
 		firstMail = driver.findElement(params.firstMail);
 		
@@ -21,7 +21,7 @@ public class ChernPage {
 	public CreatePage firstMail(){
 		
 		firstMail.click();
-		return new CreatePage(driver);
+		return new CreatePage(driver,params);
 	}
 	
 	public SentPage goToSent(){
@@ -29,7 +29,7 @@ public class ChernPage {
 		sentLink = driver.findElement(params.sentLink);
 		sentLink.click();
 		
-		return new SentPage(driver);
+		return new SentPage(driver,params);
 	}
 	
 }
