@@ -1,5 +1,6 @@
 package webdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -36,6 +37,8 @@ public class CreatePage extends Page{
 		addr.sendKeys(to);
 		text.sendKeys(body); 
 		save.click();
+		
+		if(params.type.equals("yandex")) driver.findElement(By.xpath("//*[@id='js']/body/div[6]/div[2]/table/tbody/tr/td/div[4]/button[1]")).click();;
 		return new MainPage(driver,params);
 	}
 	
