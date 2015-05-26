@@ -38,7 +38,8 @@ public class MainPage extends Page {
 
 		chern = driver.findElement(params.chernovik);
 		chern.click();
-		(new WebDriverWait(driver, 10)).until(ExpectedConditions.titleContains("Черновики"));
+
+		new WebDriverWait(driver, 10, 5000).until(ExpectedConditions.titleContains("Черновики"));
 		
 		return new ChernPage(driver, params);
 	}

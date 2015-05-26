@@ -61,7 +61,7 @@ public class Params {
 			
 			createMessage = By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[2]/div/div/div/div[2]/a[2]");
 			
-			chernovik = By.xpath(".//a[@href='#draft']");
+			chernovik = By.xpath(".//a[contains(@href,'draft')]");
 			
 			saveButton = By.id("nb-22");
 			sendButton = By.xpath("//*[@id='compose-submit']");
@@ -71,7 +71,7 @@ public class Params {
 			textForm =By.xpath("/html/body/div[2]/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[2]/div/div/form/div/div[2]/div[2]/textarea");
 			firstMail = By.xpath(".//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[1]/div[3]/div[2]/div/div[2]/div[2]/div/span[2]/span/a/span[2]/span/span");
 				
-			sentLink = By.xpath("//*[@id='js-page']/div/div[5]/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/span[2]/a");
+			sentLink = By.xpath(".//a[contains(@href,'sent')]");
 			firstSent =By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[1]/span/span[2]");
 			
 		

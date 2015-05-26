@@ -36,7 +36,7 @@ public class YandexTest {
 	
 	@AfterClass
 	public static void close(){
-	driver.quit();
+	driver.close();
 		
 	}
 
@@ -59,8 +59,8 @@ public class YandexTest {
 		
 		create = chern.firstMail();
 		
-		create.sendLetter();
-		chern = main.goToChern();
+		main = create.sendLetter();
+		
 		
 		sent = chern.goToSent();
 		
