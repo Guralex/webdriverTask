@@ -44,26 +44,22 @@ public class IuaTest {
 	public void test() {
 		
 		driver.get("http://mail.i.ua/");
-				
 		loginpage = new LoginPage(driver,params);
 		main = loginpage.login("sanya_gura", "serenity");
 		create = main.goToCreate();
 		assertTrue(driver.getTitle().contains("Новое"));
 		main = create.saveLetter(testAddr, testSubj,testText);
 		chern = main.goToChern();
-		
 		assertTrue(chern.firstMail.getText().contains(testAddr));
-	
 		create = chern.firstMail();
-		
 		assertEquals(create.addr.getText(),testAddr);
 		main =create.sendLetter();
 		chern = main.goToChern();
 		assertTrue(chern.firstMail==null);
 		sent = chern.goToSent();
 		assertTrue(sent.firstSent.getText().contains(testAddr));
-		/*sent.gotoExit();
-		assertTrue(driver.getTitle().contains("Твоя почта"));*/
+		sent.gotoExit();
+	
 		
 	}
 	

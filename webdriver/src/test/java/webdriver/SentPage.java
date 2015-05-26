@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 public class SentPage extends Page{
 	Params params;
 	 WebElement firstSent;
+	private WebElement exitMenu;
 	private WebElement exitButton;
 	SentPage(WebDriver driver, Params par){
 		this.driver=driver;
@@ -14,8 +15,11 @@ public class SentPage extends Page{
 	}
 	
 	public void gotoExit(){
+		exitMenu = driver.findElement(params.exitMenu);
+		exitMenu.click();
 		exitButton = driver.findElement(params.exitButton);
 		exitButton.click();
+		
 		
 	}
 }

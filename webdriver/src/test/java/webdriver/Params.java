@@ -25,30 +25,32 @@ public class Params {
 	 By firstSent;
 	
 	 By exitButton ;
+	 By exitMenu ;
 	
 	private Params(String site){
 		this.type = site;
 		switch(site){
 		
 		case "i.ua":{
-			loginButton = By.xpath("/html/body/div[1]/div[5]/div[1]/div/div[3]/form/ul/li[2]/input");
+			loginButton = By.xpath(".//*[@class='list_cols_2 clear']/li[2]/input");
 			loginForm = By.name("login");
 			passForm = By.name("pass");
 			createMessage = By.xpath("//p[@class='make_message']/a");
-			chernovik = By.xpath("/html/body/div[1]/div[5]/div[2]/div/div/div[2]/div[2]/div[3]/ul/li[3]/a");
+			chernovik = By.xpath(".//*[@class='list_underlined']/li/a[contains(@href,'drafts')]");
 			
 			saveButton = By.name("save_in_drafts");
 			sendButton = By.name("send");
 			toForm = By.name("to");
 			themeForm = By.name("subject");
 			//final By textForm = By.name("body");
-			textForm =By.xpath("/html/body/div[4]/div[5]/div[1]/div[1]/div[2]/textarea");
-			firstMail = By.xpath("/html/body/div[1]/div[5]/div[2]/div[2]/div[2]/form/div[1]");
+			textForm =By.xpath(".//*[@id='text']");
+			firstMail = By.xpath(".//*[@id='mesgList']/form/div[1]/a/span[2]");
 				
-			sentLink = By.xpath("/html/body/div[1]/div[5]/div[2]/div[1]/div[2]/div[3]/ul/li[2]/a");
+			sentLink = By.xpath(".//*[@class='list_underlined']/li/a[contains(@href,'sent')]");
 			firstSent =By.xpath("/html/body/div[1]/div[5]/div[2]/div[2]/div[2]/form/div/a/span[2]");
-			exitButton =By.xpath("/html/body/div[1]/div[2]/div[1]/div/ul/li[7]/a");
 			
+			exitMenu =By.xpath(".//*[@title='Настройки']");
+			exitButton =By.xpath(".//*[contains(@href,'logout')]");
 			break;
 		}
 		
@@ -59,7 +61,7 @@ public class Params {
 			
 			createMessage = By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[2]/div/div/div/div[2]/a[2]");
 			
-			chernovik = By.xpath("//*[@id='js-page']/div/div[5]/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[5]/span[2]/a");
+			chernovik = By.xpath(".//a[@href='#draft']");
 			
 			saveButton = By.id("nb-22");
 			sendButton = By.xpath("//*[@id='compose-submit']");
@@ -67,11 +69,12 @@ public class Params {
 			themeForm = By.id("compose-subj");
 			//final By textForm = By.name("body");
 			textForm =By.xpath("/html/body/div[2]/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[2]/div/div/form/div/div[2]/div[2]/textarea");
-			firstMail = By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[1]/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[2]/span/span");
+			firstMail = By.xpath(".//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[1]/div[3]/div[2]/div/div[2]/div[2]/div/span[2]/span/a/span[2]/span/span");
 				
-			sentLink = By.xpath("/html/body/div[1]/div[5]/div[2]/div[1]/div[2]/div[3]/ul/li[2]/a");
-			firstSent =By.xpath("/html/body/div[1]/div[5]/div[2]/div[2]/div[2]/form/div/a/span[2]");
-			exitButton =By.xpath("/html/body/div[1]/div[2]/div[1]/div/ul/li[7]/a");
+			sentLink = By.xpath("//*[@id='js-page']/div/div[5]/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/span[2]/a");
+			firstSent =By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[1]/span/span[2]");
+			
+		
 			break;
 		}
 		

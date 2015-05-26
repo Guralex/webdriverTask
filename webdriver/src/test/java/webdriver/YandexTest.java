@@ -36,7 +36,7 @@ public class YandexTest {
 	
 	@AfterClass
 	public static void close(){
-	driver.close();
+	driver.quit();
 		
 	}
 
@@ -49,18 +49,28 @@ public class YandexTest {
 		create = main.goToCreate();
 		main = create.saveLetter(testAddr, testSubj,testText);
 		
+		
+		
+		
+		
 		chern = main.goToChern();
+		
 		
 		
 		create = chern.firstMail();
 		
-		main =create.sendLetter();
+		create.sendLetter();
 		chern = main.goToChern();
-		assertTrue(chern.firstMail==null);
+		
 		sent = chern.goToSent();
-		/*assertTrue(sent.firstSent.getText().contains(testAddr));
+		
+		
 		sent.gotoExit();
-		assertTrue(driver.getTitle().contains("Твоя почта"));*/
+		
+
+		
+		
+		
 		
 	}
 	
