@@ -36,7 +36,7 @@ public class YandexTest {
 	
 	@AfterClass
 	public static void close(){
-	driver.close();
+	driver.quit();
 		
 	}
 

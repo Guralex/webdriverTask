@@ -74,7 +74,9 @@ public class Params {
 			sentLink = By.xpath(".//a[contains(@href,'sent')]");
 			firstSent =By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[1]/span/span[2]");
 			
-		
+			exitMenu =By.xpath("/html/body/div[2]/div/div[3]/div[2]/a[3]/span[2]");
+			exitButton =By.xpath(".//a[contains(@href,'logout')]");
+			
 			break;
 		}
 		
