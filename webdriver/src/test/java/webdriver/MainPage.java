@@ -30,7 +30,7 @@ public class MainPage extends Page {
 		
 		create = driver.findElement(params.createMessage);
 		create.click();
-		return new CreatePage(driver, params);
+		return  new CreatePage(driver, params);
 		
 	}
 	

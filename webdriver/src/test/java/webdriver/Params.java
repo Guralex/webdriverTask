@@ -81,6 +81,33 @@ public class Params {
 		}
 		
 		
+		case "google":{
+			loginButton = By.xpath("/html/body/div/div[2]/div[2]/div[1]/form/div[1]/div/input");
+			loginForm = By.xpath("/html/body/div/div[2]/div[2]/div[1]/form/div[1]/div/div[1]/div/div/input[1]");
+			passForm = By.xpath("/html/body/div/div[2]/div[2]/div[1]/form/div[2]/div/div[2]/div/div/input[2]");
+			
+			createMessage = By.xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div[1]/div/div");
+			
+			chernovik = By.xpath(".//a[contains(@href,'draft')]");
+			
+			saveButton = By.id("nb-22");
+			sendButton = By.xpath("//*[@id='compose-submit']");
+			toForm = By.className("b-mail-input_yabbles__focus");
+			themeForm = By.id("compose-subj");
+			//final By textForm = By.name("body");
+			textForm =By.xpath("/html/body/div[2]/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[2]/div/div/form/div/div[2]/div[2]/textarea");
+			firstMail = By.xpath(".//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[1]/div[3]/div[2]/div/div[2]/div[2]/div/span[2]/span/a/span[2]/span/span");
+				
+			sentLink = By.xpath(".//a[contains(@href,'sent')]");
+			firstSent =By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[1]/span/span[2]");
+			
+			exitMenu =By.xpath("/html/body/div[2]/div/div[3]/div[2]/a[3]/span[2]");
+			exitButton =By.xpath(".//a[contains(@href,'logout')]");
+			
+			break;
+		}
+		
+		
 		}
 		
 		
