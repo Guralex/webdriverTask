@@ -36,7 +36,7 @@ public class ChernPage {
 	public void firstMailGoogle(){
 		
 		firstMail.click();
-		driver.findElement(By.xpath("//div[text()='Отправить']"));
+		driver.findElement(By.xpath("//div[text()='Отправить']")).click();
 	}
 	
 }

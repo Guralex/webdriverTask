@@ -34,11 +34,11 @@ public class GoogleTest {
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	/*@AfterClass
+	@AfterClass
 	public static void close(){
 	driver.quit();
 		
-	}*/
+	}
 
 	@Test
 	public void test() {
@@ -54,7 +54,7 @@ public class GoogleTest {
 		sent=chern.goToSent();
 		sent.gotoExit();
 		
-		
+	
 	
 
 		
