@@ -1,5 +1,6 @@
 package webdriver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -30,6 +31,12 @@ public class ChernPage {
 		sentLink.click();
 		
 		return new SentPage(driver,params);
+	}
+	
+	public void firstMailGoogle(){
+		
+		firstMail.click();
+		driver.findElement(By.xpath("//div[text()='Отправить']"));
 	}
 	
 }

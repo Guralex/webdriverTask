@@ -46,28 +46,16 @@ public class GoogleTest {
 	
 		driver.get("http://mail.google.com");
 		loginpage = new LoginPage(driver,params);
-		main = loginpage.login("serenity3837@gmail.com", "guralex3837");
-		create = main.goToCreate();
-		/*main = create.saveLetter(testAddr, testSubj,testText);
+		
+		chern=loginpage.loginPlusSaveForGoogle("serenity3837@gmail.com", "guralex3837");
+		
+		chern.firstMailGoogle();
+		
+		sent=chern.goToSent();
+		sent.gotoExit();
 		
 		
-		
-		
-		
-		chern = main.goToChern();
-		
-		
-		
-		create = chern.firstMail();
-		
-		main = create.sendLetter();
-		
-		
-		sent = chern.goToSent();
-		
-		
-		sent.gotoExit();*/
-		
+	
 
 		
 		

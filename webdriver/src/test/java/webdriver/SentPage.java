@@ -8,6 +8,7 @@ public class SentPage extends Page{
 	 WebElement firstSent;
 	private WebElement exitMenu;
 	private WebElement exitButton;
+	
 	SentPage(WebDriver driver, Params par){
 		this.driver=driver;
 		this.params = par;

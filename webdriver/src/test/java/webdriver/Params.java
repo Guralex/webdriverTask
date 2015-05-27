@@ -90,18 +90,18 @@ public class Params {
 			
 			chernovik = By.xpath(".//a[contains(@href,'draft')]");
 			
-			saveButton = By.id("nb-22");
-			sendButton = By.xpath("//*[@id='compose-submit']");
-			toForm = By.className("b-mail-input_yabbles__focus");
-			themeForm = By.id("compose-subj");
+			saveButton = By.xpath("/html/body/div[14]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[2]/div/div[2]/div/div/div/div/table/tbody/tr/td[2]/img[3]");
+			sendButton = By.xpath("/html/body/div[14]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/div/div/div[4]/table/tbody/tr/td[1]/div/div[2]");
+			toForm = By.xpath("/html/body/div[14]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/form/div[1]/table/tbody/tr[1]/td[2]/div/div/textarea");
+			themeForm = By.name("subjectbox");
 			//final By textForm = By.name("body");
-			textForm =By.xpath("/html/body/div[2]/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[2]/div/div/form/div/div[2]/div[2]/textarea");
-			firstMail = By.xpath(".//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div[1]/div[3]/div[2]/div/div[2]/div[2]/div/span[2]/span/a/span[2]/span/span");
+			textForm =By.xpath("/html/body/div[14]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/div/div[1]/div[2]/div[1]/div/table/tbody/tr/td[2]/div[2]/div");
+			firstMail = By.xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div[2]/div[4]/div[1]/div/table/tbody/tr[1]/td[6]/div/div/div/span[1]");
 				
-			sentLink = By.xpath(".//a[contains(@href,'sent')]");
-			firstSent =By.xpath("//*[@id='js-page']/div/div[5]/div/div[3]/div/div[3]/div/div/div/div/div[3]/div[2]/div/div[2]/div[2]/div[1]/span[2]/span/a/span[1]/span/span[2]");
+			sentLink = By.xpath(".//*[contains(@href,'sent')]");
+			firstSent =By.xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div[2]/div[1]/div[1]/div/div[3]/div[4]/div[1]/div/table/tbody/tr/td[6]/div/div/div/span[1]");
 			
-			exitMenu =By.xpath("/html/body/div[2]/div/div[3]/div[2]/a[3]/span[2]");
+			exitMenu =By.xpath(".//a[contains(@href,'me?tab')]");
 			exitButton =By.xpath(".//a[contains(@href,'logout')]");
 			
 			break;
