@@ -47,11 +47,13 @@ public class GoogleTest {
 		driver.get("http://mail.google.com");
 		loginpage = new LoginPage(driver,params);
 		
-		chern=loginpage.loginPlusSaveForGoogle("serenity3837@gmail.com", "guralex3837");
+		chern=loginpage.loginPlusSaveForGoogle("serenity3837@gmail.com", "guralex3837", testAddr, testSubj , testText);
 		
+		assertTrue(chern.firstMail.getText().contains(testSubj));
 		chern.firstMailGoogle();
-		
+	
 		sent=chern.goToSent();
+		assertEquals(testSubj, sent.firstSent.getText());
 		sent.gotoExit();
 		
 	
