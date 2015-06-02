@@ -17,6 +17,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 
+
+
+
+
+
 import pageObjects.CreatePage;
 import pageObjects.DraftsPage;
 import pageObjects.LoginPage;
@@ -40,9 +45,10 @@ public class YandexTest extends BaseTest{
 	public YandexDraftsPage chern;
 	public YandexSentPage sent;
 
-	public String testAddr = "sanya_gura@mail.ru";
-	public String testSubj = "hi";
-	public String testText = "Hello, my friend!!";
+	public String emailAdress = "sanya_gura@mail.ru";
+	public String emailSubject = "hi";
+	public String emailText = "Hello, my friend!!";
+	public String emailTargetname = "Alexander Gura";
 
 	
 
@@ -53,15 +59,19 @@ public class YandexTest extends BaseTest{
 		loginpage = new YandexLoginPage(driver);
 		main = loginpage.login("serenity3837", "serenity");
 		create = main.goToCreate();
-		main = create.saveLetter(testAddr, testSubj, testText);
+		
+		main = create.saveLetter(emailAdress, emailSubject, emailText);
 
 		chern = main.goToChern();
+		assertEquals("The letter is NOT in the list of drafts",chern.firstMail.getText(),emailTargetname);
 
 		create = chern.firstMail();
+		//assertEquals("The letter is NOT one, that we sent",create.addr.getText(), emailAdress);
 
 		main = create.sendLetter();
 
 		sent = chern.goToSent();
+		assertTrue("The letter is NOT in Sent folder",sent.firstSent.getText().contains(emailTargetname));
 
 		sent.gotoExit();
 
