@@ -20,22 +20,28 @@ public class GoogleTest extends BaseTest {
 	public GoogleDraftsPage chern;
 	public GoogleSentPage sent;
 
-	public String testAddr = "sanya_gura@mail.ru";
-	public String testSubj = "hi";
-	public String testText = "Hello, my friend!!";
+	public String emailAdress = "sanya_gura@mail.ru";
+	public String emailSubject = "hi";
+	public String emailText = "Hello, my friend!!";
+	public String login = "serenity3837@gmail.com";
+	public String password = "guralex3837";
+	
 
 	@Test
 	public void test() {
 
 		driver.get("http://mail.google.com");
 		loginpage = new GoogleLoginPage(driver);
-		chern = loginpage.loginPlusSaveForGoogle("serenity3837@gmail.com",
-				"guralex3837", testAddr, testSubj, testText);
-		assertTrue(chern.firstMail.getText().contains(testSubj));
+		chern = loginpage.loginPlusSaveForGoogle(login,
+				password, emailAdress, emailSubject, emailText);
+		assertTrue("The letter is NOT in the list of drafts",chern.firstMail.getText().contains(emailSubject));
 		chern.firstMailGoogle();
-		// sent = chern.goToSent();
-		// assertEquals(testSubj, sent.firstSent.getText());
-		// sent.gotoExit();
+		assertFalse("The letter is NOT removed from drafts", chern.firstMail
+				.getText().contains(emailSubject));
+		sent = chern.goToSent();
+		assertTrue("The letter is NOT in Sent folder", sent.firstSent.getText()
+				.contains(emailSubject));
+		 sent.gotoExit();
 
 	}
 

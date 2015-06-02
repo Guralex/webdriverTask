@@ -29,13 +29,16 @@ public class YandexTest extends BaseTest {
 	public String emailSubject = "hi";
 	public String emailText = "Hello, my friend!!";
 	public String emailTargetname = "Alexander Gura";
+	public String login = "serenity3837";
+	public String password = "serenity";
+	
 
 	@Test
 	public void test() {
 
 		driver.get("https://mail.yandex.ua/");
 		loginpage = new YandexLoginPage(driver);
-		main = loginpage.login("serenity3837", "serenity");
+		main = loginpage.login(login, password);
 		create = main.goToCreate();
 
 		main = create.saveLetter(emailAdress, emailSubject, emailText);
@@ -45,8 +48,8 @@ public class YandexTest extends BaseTest {
 				chern.firstMail.getText(), emailTargetname);
 
 		create = chern.firstMail();
-		// assertEquals("The letter is NOT one, that we sent",create.addr.getText(),
-		// emailAdress);
+		assertEquals("The letter is NOT one, that we sent",create.addr.getText(),
+				emailTargetname);
 
 		main = create.sendLetter();
 
