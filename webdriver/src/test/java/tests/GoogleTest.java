@@ -1,4 +1,4 @@
-package webdriver;
+package tests;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
+import pageObjects.CreatePage;
+import pageObjects.DraftsPage;
+import pageObjects.LoginPage;
+import pageObjects.MainPage;
+import pageObjects.Params;
+import pageObjects.SentPage;
+
 public class GoogleTest {
 
 	static WebDriver driver;
@@ -19,7 +27,7 @@ public class GoogleTest {
 	public LoginPage loginpage;
 	public MainPage main;
 	public CreatePage create;
-	public ChernPage chern;
+	public DraftsPage chern;
 	public SentPage sent;
 
 	public String testAddr = "sanya_gura@mail.ru";

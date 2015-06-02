@@ -1,11 +1,11 @@
-package webdriver;
+package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SentPage extends Page {
 	Params params;
-	WebElement firstSent;
+	public WebElement firstSent;
 	private WebElement exitMenu;
 	private WebElement exitButton;
 

@@ -1,4 +1,4 @@
-package webdriver;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,14 +14,14 @@ public class LoginPage extends Page {
 	public WebElement button;
 	Params params;
 
-	LoginPage(WebDriver driver, Params params) {
+	public LoginPage(WebDriver driver, Params params) {
 		this.driver = driver;
 
 		this.params = params;
 
 	}
 
-	public ChernPage loginPlusSaveForGoogle(String login, String password,
+	public DraftsPage loginPlusSaveForGoogle(String login, String password,
 			String addr, String subj, String text) {
 
 		this.loginForm = driver.findElement(params.loginForm);
@@ -43,7 +43,7 @@ public class LoginPage extends Page {
 				.click();
 		driver.findElement(params.chernovik).click();
 
-		return new ChernPage(driver, params);
+		return new DraftsPage(driver, params);
 	}
 
 	public MainPage login(String login, String password) {

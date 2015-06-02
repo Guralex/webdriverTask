@@ -1,4 +1,4 @@
-package webdriver;
+package pageObjects;
 
 import org.openqa.selenium.By;
 
@@ -29,32 +29,7 @@ public class Params {
 		this.type = site;
 		switch (site) {
 
-		case "i.ua": {
-			loginButton = By
-					.xpath(".//*[@class='list_cols_2 clear']/li[2]/input");
-			loginForm = By.name("login");
-			passForm = By.name("pass");
-			createMessage = By.xpath("//p[@class='make_message']/a");
-			chernovik = By
-					.xpath(".//*[@class='list_underlined']/li/a[contains(@href,'drafts')]");
-
-			saveButton = By.name("save_in_drafts");
-			sendButton = By.name("send");
-			toForm = By.name("to");
-			themeForm = By.name("subject");
-
-			textForm = By.xpath(".//*[@id='text']");
-			firstMail = By.xpath(".//*[@id='mesgList']/form/div[1]/a/span[2]");
-
-			sentLink = By
-					.xpath(".//*[@class='list_underlined']/li/a[contains(@href,'sent')]");
-			firstSent = By
-					.xpath("/html/body/div[1]/div[5]/div[2]/div[2]/div[2]/form/div/a/span[2]");
-
-			exitMenu = By.xpath(".//*[@title='Настройки']");
-			exitButton = By.xpath(".//*[contains(@href,'logout')]");
-			break;
-		}
+		
 
 		case "yandex": {
 			loginButton = By

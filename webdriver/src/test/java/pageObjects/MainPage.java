@@ -1,4 +1,4 @@
-package webdriver;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +29,7 @@ public class MainPage extends Page {
 
 	}
 
-	public ChernPage goToChern() {
+	public DraftsPage goToChern() {
 
 		chern = driver.findElement(params.chernovik);
 		chern.click();
@@ -37,7 +37,7 @@ public class MainPage extends Page {
 		new WebDriverWait(driver, 15, 5000).until(ExpectedConditions
 				.titleContains("Черновики"));
 
-		return new ChernPage(driver, params);
+		return new DraftsPage(driver, params);
 	}
 
 	public SentPage goToSent() {

@@ -1,17 +1,17 @@
-package webdriver;
+package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ChernPage {
+public class DraftsPage {
 	Params params;
 	private WebDriver driver;
 
-	WebElement firstMail;
+	public WebElement firstMail;
 	WebElement sentLink;
 
-	ChernPage(WebDriver driver, Params par) {
+	DraftsPage(WebDriver driver, Params par) {
 		this.driver = driver;
 		this.params = par;
 		if (driver.findElements(params.firstMail).size() != 0)
