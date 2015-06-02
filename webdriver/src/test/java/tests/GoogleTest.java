@@ -14,15 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+public class GoogleTest extends BaseTest {
 
-
-
-
-
-public class GoogleTest extends BaseTest{
-
-	
-	
 	public GoogleLoginPage loginpage;
 	public GoogleDraftsPage chern;
 	public GoogleSentPage sent;
@@ -30,8 +23,6 @@ public class GoogleTest extends BaseTest{
 	public String testAddr = "sanya_gura@mail.ru";
 	public String testSubj = "hi";
 	public String testText = "Hello, my friend!!";
-
-
 
 	@Test
 	public void test() {
@@ -42,9 +33,9 @@ public class GoogleTest extends BaseTest{
 				"guralex3837", testAddr, testSubj, testText);
 		assertTrue(chern.firstMail.getText().contains(testSubj));
 		chern.firstMailGoogle();
-		//sent = chern.goToSent();
-		//assertEquals(testSubj, sent.firstSent.getText());
-		//sent.gotoExit();
+		// sent = chern.goToSent();
+		// assertEquals(testSubj, sent.firstSent.getText());
+		// sent.gotoExit();
 
 	}
 

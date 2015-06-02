@@ -11,18 +11,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-
 import yandexPages.YandexCreatePage;
 import yandexPages.YandexDraftsPage;
 import yandexPages.YandexLoginPage;
 import yandexPages.YandexMainPage;
 import yandexPages.YandexSentPage;
 
-public class YandexTest extends BaseTest{
-
-
-
+public class YandexTest extends BaseTest {
 
 	public YandexLoginPage loginpage;
 	public YandexMainPage main;
@@ -35,8 +30,6 @@ public class YandexTest extends BaseTest{
 	public String emailText = "Hello, my friend!!";
 	public String emailTargetname = "Alexander Gura";
 
-	
-
 	@Test
 	public void test() {
 
@@ -44,19 +37,22 @@ public class YandexTest extends BaseTest{
 		loginpage = new YandexLoginPage(driver);
 		main = loginpage.login("serenity3837", "serenity");
 		create = main.goToCreate();
-		
+
 		main = create.saveLetter(emailAdress, emailSubject, emailText);
 
 		chern = main.goToChern();
-		assertEquals("The letter is NOT in the list of drafts",chern.firstMail.getText(),emailTargetname);
+		assertEquals("The letter is NOT in the list of drafts",
+				chern.firstMail.getText(), emailTargetname);
 
 		create = chern.firstMail();
-		//assertEquals("The letter is NOT one, that we sent",create.addr.getText(), emailAdress);
+		// assertEquals("The letter is NOT one, that we sent",create.addr.getText(),
+		// emailAdress);
 
 		main = create.sendLetter();
 
 		sent = chern.goToSent();
-		assertTrue("The letter is NOT in Sent folder",sent.firstSent.getText().contains(emailTargetname));
+		assertTrue("The letter is NOT in Sent folder", sent.firstSent.getText()
+				.contains(emailTargetname));
 
 		sent.gotoExit();
 
