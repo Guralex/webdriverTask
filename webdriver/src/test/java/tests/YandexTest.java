@@ -13,21 +13,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 
-
-
-
-
-
-
-
-
-
-import pageObjects.CreatePage;
-import pageObjects.DraftsPage;
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
-import pageObjects.Params;
-import pageObjects.SentPage;
 import yandexPages.YandexCreatePage;
 import yandexPages.YandexDraftsPage;
 import yandexPages.YandexLoginPage;
